@@ -95,7 +95,6 @@ h3{
     height: 25px;
 }
 
-
 @media (max-width: 900px){
     h2{
         font-size: 18px;
@@ -111,7 +110,10 @@ h3{
         left: 5%;
     }
     .description{
-        padding: 1em;
+        padding: 0;
+    }
+    .title{
+        padding: 0 1em;
     }
     .mainimg{
         width: 100%;
@@ -120,5 +122,18 @@ h3{
     }
     .shareimg{
         margin-right: 0;
+    }
+    .dialoginnerpart{
+        margin-right: 1em;
+        margin-left: 0;
+        padding: 10px;
+        width: 60%;
+    }
+    .person{
+        margin-right: 0;
+        align-items: center;
+        justify-content: space-around;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 }

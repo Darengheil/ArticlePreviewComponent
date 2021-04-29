@@ -41,9 +41,41 @@
   <script type="text/javascript">
     let openWindow = document.querySelector(".shareimg");
     let displayWindow = document.querySelector(".dialogdisplay");
-    openWindow.addEventListener("click", () => {
-      displayWindow.style.display === "none" ? displayWindow.style.display = "block" : displayWindow.style.display = "none";
-    });
+    let formobile = document.querySelector(".person");
+    let changeablepart = document.querySelector(".imgdesc");
+    let changepart = document.querySelector(".dialoginnerpart");
+    let count = 1;
+    if(window.matchMedia('(max-width: 900px)').matches){
+      openWindow.addEventListener("click", () => {
+        if(count===1){
+          openWindow.style.backgroundColor = "hsl(217, 19%, 35%)";
+          openWindow.style.filter = "brightness(2)";
+          formobile.style.backgroundColor = "hsl(217, 19%, 35%)";
+          changeablepart.replaceWith(changepart);
+          count = 0;
+        } else{
+          openWindow.style.backgroundColor = "hsl(210, 46%, 95%)";  
+          openWindow.style.filter = "brightness(1)";        
+          formobile.style.backgroundColor = "white";
+          changepart.replaceWith(changeablepart);
+          count = 1;
+        };
+      });
+    }else{
+      openWindow.addEventListener("click", () => {
+        if(count===1){
+          openWindow.style.backgroundColor = "hsl(217, 19%, 35%)";
+          openWindow.style.filter = "brightness(2)";
+          displayWindow.style.display = "block";
+          count = 0;
+        } else{
+          openWindow.style.backgroundColor = "hsl(210, 46%, 95%)";
+          openWindow.style.filter = "brightness(1)"; 
+          displayWindow.style.display = "none";
+          count = 1;
+        }
+      });
+    }
   </script>
 </body>
 </html>
